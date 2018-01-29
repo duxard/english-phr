@@ -1,0 +1,30 @@
+#formInput {
+    color: red;
+    height: 40px;
+}
+main {
+    padding: 0 5px;
+}
+
+ul#list li{
+    border-right: none;
+    border-left: none;
+}
+/*
+ul#list li:first-child {
+    color: red;
+}
+ul#list li:last-child {
+    color: red;
+}
+*/
+.list-group-item:first-child {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}

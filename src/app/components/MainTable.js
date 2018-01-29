@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import './css/MainTableStyles.css';
+
 export default class MainTable extends React.Component{
     constructor(props){
         super(props);
@@ -16,16 +18,20 @@ export default class MainTable extends React.Component{
 
     componentDidMount(){
         axios.get('./resources/words.json').then( result => {
-            this.setState({connotations: result.data.words});
-            console.log(this.state.connotations)
+            let newList = result.data.words
+                .sort((a,b) => a>b)
+                .map(i => ("to "+i));
+            console.log(newList);
+            this.setState({connotations: newList});
         }).catch(err => console.log(err));
     }
 
-    handleChange(){
+    handleChange(e){
         this.setState({
-            inputText: this.textInput.value
+            inputText: e.target.value
         });
     }
+
     handleSubmit(e){
         e.preventDefault();
         console.log(this.state.inputText);
@@ -35,36 +41,34 @@ export default class MainTable extends React.Component{
         alert(true);
     }
 
+    showInConsole(){
+        var lis = document.querySelectorAll("#list li");
+        Array.prototype.map.call(lis, function(item){
+            console.log(item.innerText);
+        });
+    }
+
     render(){
         return (
             <div>
                 <form id="form" onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.inputText} onChange={this.handleChange} ref={(input) => { this.textInput = input; }}/>
-                    <br/>
-                    <input type="submit"/>
+                    <label htmlFor="formInput">Example label</label>
+                    <input type="text"
+                           className="form-control"
+                           id="formInput"
+                           placeholder="Example input"
+                           onChange={this.handleChange}
+                           value={this.state.inputText}
+                    />
                 </form>
-                <button id="btn" onClick={MainTable.clickHandler}>click</button>
                 <div>
-                    <ul id="list">
+                    <button onClick={this.showInConsole.bind(this)}>Calc</button>
+                    <ul id="list" className="list-group">
                         {
-                            this.state.connotations.map((item, index) => <li key={index}>{item}</li>)
+                            this.state.connotations.map((item, index) => <li key={index} className="list-group-item">{item}</li>)
                         }
                     </ul>
                 </div>
-
-                <div>
-                    <form>
-                        <div className="form-group">
-                            <label htmlFor="formGroupExampleInput">Example label</label>
-                            <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="formGroupExampleInput2">Another label</label>
-                            <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Another input" />
-                        </div>
-                    </form>
-                </div>
-
             </div>
         );
     }

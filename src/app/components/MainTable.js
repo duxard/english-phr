@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import './css/MainTableStyles.css';
 
+var initialWordsList = [];
+
 export default class MainTable extends React.Component{
     constructor(props){
         super(props);
@@ -18,23 +20,26 @@ export default class MainTable extends React.Component{
 
     componentDidMount(){
         axios.get('./resources/words.json').then( result => {
-            let newList = result.data.words
+            initialWordsList = result.data.words
                 .sort((a,b) => a>b)
                 .map(i => ("to "+i));
-            console.log(newList);
-            this.setState({connotations: newList});
+            this.setState({connotations: initialWordsList});
         }).catch(err => console.log(err));
     }
 
     handleChange(e){
+        var filteredList = initialWordsList.filter((item) => {
+            return ~item.toLowerCase().indexOf(e.target.value.toLowerCase());
+        });
         this.setState({
-            inputText: e.target.value
+            inputText: e.target.value,
+            connotations: filteredList
         });
     }
 
     handleSubmit(e){
         e.preventDefault();
-        console.log(this.state.inputText);
+
     }
 
     static clickHandler(event){

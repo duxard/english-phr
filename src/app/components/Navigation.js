@@ -1,29 +1,32 @@
 import React from 'react';
+import { IndexLink, Link } from 'react-router';
 
 export default class Navigation extends React.Component {
     render(){
         return(
             <div>
-                <div className="navbar navbar-inverse navbar-static-top">
-                    <div className="container">
-                        <div className="navbar-header">
-                            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#responsiveMenu">
-                                <span className="sr-only">Open nav</span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                            </button>
-                            <a href="#" className="navbar-brand">Logo</a>
-                        </div>
-                        <div className="collapse navbar-collapse" id="responsiveMenu">
-                            <ul className="nav navbar-nav">
-                                <li><a href="#">Words</a></li>
-                                <li><a href="#">Links</a></li>
-                                <li><a href="#">Info</a></li>
-                            </ul>
+                <nav>
+                    <div className="navbar navbar-inverse navbar-static-top">
+                        <div className="container">
+                            <div className="navbar-header">
+                                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#responsiveMenu">
+                                    <span className="sr-only">Open nav</span>
+                                    <span className="icon-bar"></span>
+                                    <span className="icon-bar"></span>
+                                    <span className="icon-bar"></span>
+                                </button>
+                                <a href="#" className="navbar-brand">Logo</a>
+                            </div>
+                            <div className="collapse navbar-collapse" id="responsiveMenu">
+                                <ul className="nav navbar-nav">
+                                    <li><IndexLink to="/">Words</IndexLink></li>
+                                    <li><Link to="about">About</Link></li>
+                                    <li><Link to="numeric">Numeric</Link></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </nav>
             </div>
         );
     }

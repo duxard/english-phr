@@ -1,0 +1,13 @@
+#testSection_1{
+    font-family: 'PFRegal','Georgia',serif;
+}
+#numericField {
+    width: 200px;
+    margin: auto;
+}
+
+#sendBtn {
+    margin: 10px 0;
+    width: 100px;
+    height: 50px;
+}

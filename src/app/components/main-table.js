@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import './css/MainTableStyles.css';
+import './css/main-table-styles.css';
 
 var initialWordsList = [];
 

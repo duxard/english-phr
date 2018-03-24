@@ -1,6 +1,8 @@
 import React from 'react';
 import { IndexLink, Link } from 'react-router';
 
+import './css/nav.css';
+
 export default class Navigation extends React.Component {
     render(){
         return(
@@ -15,7 +17,9 @@ export default class Navigation extends React.Component {
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>
                                 </button>
-                                <a href="#" className="navbar-brand">Logo</a>
+                                <a href="https://en.wikipedia.org/wiki/Ukraine" className="navbar-brand" target="_blank">
+                                    <img src="../img/logo4.png" alt="logo" width="50" height="50"/>
+                                </a>
                             </div>
                             <div className="collapse navbar-collapse" id="responsiveMenu">
                                 <ul className="nav navbar-nav">

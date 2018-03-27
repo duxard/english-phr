@@ -13,6 +13,14 @@ export default class TestNumericField extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePaste = this.handlePaste.bind(this);
+    }
+
+    resetInputField() {
+        this.setState({
+            inputText: "",
+            lineLength: 0
+        });
     }
 
     handleChange(e){
@@ -22,8 +30,22 @@ export default class TestNumericField extends React.Component {
         });
     }
 
+    handlePaste(e){
+        e.preventDefault();
+    }
+
     handleSubmit(e){
         e.preventDefault();
+
+        if(this.state.inputText === ""){
+            alert("ERROR: пустая строка");
+        }else if( !/^\d{1,6}$/.test(this.state.inputText) ){
+            alert("ERROR - невалидная строка");
+            this.resetInputField();
+        }else{
+            alert("Отправлено!");
+            this.resetInputField()
+        }
     }
 
     render(){
@@ -38,6 +60,7 @@ export default class TestNumericField extends React.Component {
                                aria-describedby="emailHelp"
                                maxLength="10"
                                onChange={this.handleChange}
+                               onPaste={this.handlePaste}
                                value={this.state.inputText} />
                         <button id="sendBtn" className="btn btn-primary">Send</button>
                     </form>

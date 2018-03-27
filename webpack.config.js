@@ -1,4 +1,5 @@
-var path = require('path');
+var path = require('path'),
+    copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src') + '/app/index.js',
@@ -22,5 +23,11 @@ module.exports = {
                 loader: 'style-loader!css-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new copyWebpackPlugin([
+            {from: 'src/app/innerapi.js', to: './'},
+            {}
+        ], {debug: 'info'})
+    ]
 };

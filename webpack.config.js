@@ -26,8 +26,7 @@ module.exports = {
     },
     plugins: [
         new copyWebpackPlugin([
-            {from: 'src/app/innerapi.js', to: './'},
-            {}
+            {from: 'src/app/innerapi.js', to: './'}
         ], {debug: 'info'})
     ]
 };

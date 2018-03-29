@@ -6,6 +6,7 @@ import Root from './components/root';
 import MainComponent from './components/main-component';
 import About from './components/about';
 import TestNumericField from './components/test-numeric-field';
+import RegisterForm from './components/register';
 
 class App extends React.Component{
     constructor(){
@@ -18,6 +19,7 @@ class App extends React.Component{
                     <IndexRoute component={MainComponent} />
                     <Route path="about" component={About}></Route>
                     <Route path="numeric" component={TestNumericField}></Route>
+                    <Route path="reg" component={RegisterForm}></Route>
                 </Route>
             </Router>
         );

@@ -67,7 +67,6 @@ export default class MainTable extends React.Component{
                     />
                 </form>
                 <div>
-                    <button onClick={this.showInConsole.bind(this)}>Calc</button>
                     <ul id="list" className="list-group">
                         {
                             this.state.connotations.map((item, index) => <li key={index} className="list-group-item">{item}</li>)

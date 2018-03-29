@@ -17,7 +17,7 @@ export default class Navigation extends React.Component {
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>
                                 </button>
-                                <a href="https://en.wikipedia.org/wiki/Ukraine" className="navbar-brand" target="_blank">
+                                <a href="/" className="navbar-brand">
                                     <img src="../img/logo4.png" alt="logo" width="50" height="50"/>
                                 </a>
                             </div>
@@ -26,6 +26,7 @@ export default class Navigation extends React.Component {
                                     <li><IndexLink to="/">Words</IndexLink></li>
                                     <li><Link to="about">About</Link></li>
                                     <li><Link to="numeric">Numeric</Link></li>
+                                    <li><Link to="reg">Register</Link></li>
                                 </ul>
                             </div>
                         </div>

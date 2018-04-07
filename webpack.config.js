@@ -26,7 +26,8 @@ module.exports = {
     },
     plugins: [
         new copyWebpackPlugin([
-            {from: 'src/app/innerapi.js', to: './'}
+            {from: 'src/app/innerapi.js', to: './'},
+            {from: 'src/resources/words.json', to: '../resources/'}
         ], {debug: 'info'})
     ]
 };

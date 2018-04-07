@@ -9,12 +9,14 @@ export default class Navigation extends React.Component {
 
         this.hideMenu = this.hideMenu.bind(this);
         this.state = {
-
+            menuBtn: null
         }
     }
 
     componentDidMount(){
-
+        this.setState({
+            menuBtn: document.getElementById("navBtn")
+        });
     }
 
     hideMenu(){

@@ -2,8 +2,8 @@
   "words": [
     "boast to",
     "brag to",
-	"is biased against smb",
-	"is biased towards smb",
+	"be biased against smb",
+	"be biased towards smb",
 	"accuse of",
 	"apologize for smth",
 	"approve of",
@@ -86,6 +86,7 @@
 	"suffer from",
 	"similar to",
 	"shout at",
+	"smile at",
 	"be aware of",
 	"be bad at",
 	"throw smth at",
@@ -99,6 +100,10 @@
 	"stop smbd from doing smth",
 	"talk about",
 	"trust smbd with doing smth",
-	"be typical of"
+	"be typical of",
+	"be similar to",
+	"complain to smb about smth",
+	"talk smb into doing smth",
+	"talk smb out of doing smth"
   ]
 }

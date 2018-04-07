@@ -28,3 +28,8 @@ ul#list li:last-child {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
+
+#list{
+    font-family: 'PFRegal','Georgia',serif;
+    font-size: 16px;
+}

@@ -1,3 +1,7 @@
 .navbar-brand > img {
     margin-top: -14px;
 }
+
+.nav > li {
+    font-size: 16px;
+}

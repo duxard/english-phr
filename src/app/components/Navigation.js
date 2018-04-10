@@ -8,21 +8,31 @@ export default class Navigation extends React.Component {
         super(props);
 
         this.hideMenu = this.hideMenu.bind(this);
+
         this.state = {
             menuBtn: null,
-            navbarCollapse: null
-        }
+            responsiveMenu: null
+        };
     }
 
     componentDidMount(){
         this.setState({
             menuBtn: document.getElementById("navBtn"),
-            navbarCollapse: document.querySelector(".navbar-collapse")
+            responsiveMenu: document.getElementById("responsiveMenu")
         });
     }
 
+    //function setAttributes(el, attrs) {
+    //    for(var key in attrs) {
+    //        el.setAttribute(key, attrs[key]);
+    //    }
+    //}
+
     hideMenu(){
-        this.state.navbarCollapse.collapse("toggle");
+        //todo add helper function (see above)
+        this.state.responsiveMenu.setAttribute("class", "collapse navbar-collapse");
+        this.state.responsiveMenu.setAttribute("aria-expanded", "false");
+        this.state.responsiveMenu.setAttribute("style", "height: 1px");
     }
 
     render(){
@@ -32,7 +42,11 @@ export default class Navigation extends React.Component {
                     <div className="navbar navbar-inverse navbar-static-top">
                         <div className="container">
                             <div className="navbar-header">
-                                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#responsiveMenu" id="navBtn">
+                                <button type="button"
+                                        className="navbar-toggle"
+                                        data-toggle="collapse"
+                                        data-target="#responsiveMenu"
+                                        id="navBtn">
                                     <span className="sr-only">Open nav</span>
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>

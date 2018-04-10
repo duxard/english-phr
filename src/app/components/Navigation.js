@@ -9,18 +9,20 @@ export default class Navigation extends React.Component {
 
         this.hideMenu = this.hideMenu.bind(this);
         this.state = {
-            menuBtn: null
+            menuBtn: null,
+            navbarCollapse: null
         }
     }
 
     componentDidMount(){
         this.setState({
-            menuBtn: document.getElementById("navBtn")
+            menuBtn: document.getElementById("navBtn"),
+            navbarCollapse: document.querySelector(".navbar-collapse")
         });
     }
 
     hideMenu(){
-
+        this.state.navbarCollapse.collapse("toggle");
     }
 
     render(){

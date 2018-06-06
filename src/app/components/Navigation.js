@@ -8,6 +8,7 @@ export default class Navigation extends React.Component {
         super(props);
 
         this.hideMenu = this.hideMenu.bind(this);
+        this.setAttributes = this.setAttributes.bind(this);
 
         this.state = {
             menuBtn: null,
@@ -22,17 +23,18 @@ export default class Navigation extends React.Component {
         });
     }
 
-    //function setAttributes(el, attrs) {
-    //    for(var key in attrs) {
-    //        el.setAttribute(key, attrs[key]);
-    //    }
-    //}
+    setAttributes(el, attrs) {
+        for(var key in attrs) {
+            el.setAttribute(key, attrs[key]);
+        }
+    }
 
     hideMenu(){
-        //todo add helper function (see above)
-        this.state.responsiveMenu.setAttribute("class", "collapse navbar-collapse");
-        this.state.responsiveMenu.setAttribute("aria-expanded", "false");
-        this.state.responsiveMenu.setAttribute("style", "height: 1px");
+        this.setAttributes(this.state.responsiveMenu, {
+            "class": "collapse navbar-collapse",
+            "aria-expanded": "false",
+            "style": "height: 1px"
+        });
     }
 
     render(){
@@ -62,6 +64,7 @@ export default class Navigation extends React.Component {
                                     <li><Link to="about" onClick={this.hideMenu}>About</Link></li>
                                     <li><Link to="numeric" onClick={this.hideMenu}>Numeric</Link></li>
                                     <li><Link to="reg" onClick={this.hideMenu}>Register</Link></li>
+                                    <li><Link to="inputs" onClick={this.hideMenu}>Inputs</Link></li>
                                 </ul>
                             </div>
                         </div>

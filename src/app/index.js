@@ -7,6 +7,7 @@ import MainComponent from './components/main-component';
 import About from './components/about';
 import TestNumericField from './components/test-numeric-field';
 import RegisterForm from './components/register';
+import Inputs from './components/inputs';
 
 class App extends React.Component{
     constructor(){
@@ -20,6 +21,7 @@ class App extends React.Component{
                     <Route path="about" component={About}></Route>
                     <Route path="numeric" component={TestNumericField}></Route>
                     <Route path="reg" component={RegisterForm}></Route>
+                    <Route path="inputs" component={Inputs}></Route>
                 </Route>
             </Router>
         );

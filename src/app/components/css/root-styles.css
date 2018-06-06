@@ -1,0 +1,19 @@
+#root-container{
+    position: relative;
+}
+
+#up {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 47px;
+    height: 49px;
+    /*background: url(../img/up.png) 0 0 no-repeat;*/
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    opacity: .7;
+    display: none; }
